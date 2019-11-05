@@ -177,7 +177,13 @@ function initConfig(string $dir)
     } else {
         throw new \SMProxy\SMProxyException('ERROR:server.swoole.pid_file 配置项不存在!');
     }
-
+    if(isset($_SERVER['RDS_HOSTNAME']) &&$_SERVER['RDS_HOSTNAME']!=''){
+        $config['database']['serverInfo']['weareone']['write']['host']=$_SERVER['RDS_HOSTNAME'];
+    }
+    if(isset($_SERVER['RDS_HOSTNAME_READ']) &&$_SERVER['RDS_HOSTNAME_READ']!=''){
+        $config['database']['serverInfo']['weareone']['read']['host']=$_SERVER['RDS_HOSTNAME_READ'];
+    }
+    
     return $config;
 }
 
