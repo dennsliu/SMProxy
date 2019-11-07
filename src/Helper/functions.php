@@ -184,7 +184,7 @@ function initConfig(string $dir)
         $config['database']['serverInfo']['weareone']['read']['host']=$_SERVER['RDS_HOSTNAME_READ'];
     }
     if(isset($_SERVER['CONNECTION_POOL_WRITE']) &&$_SERVER['CONNECTION_POOL_WRITE']!=''){
-        $config['database']['databases']['weareone']['maxConns']=$_SERVER['CONNECTION_POOL_WRITE'];
+        $config['database']['databases']['weareone']['maxConns']=intval($_SERVER['CONNECTION_POOL_WRITE']);
     }
     
     return $config;
