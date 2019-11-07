@@ -18,12 +18,12 @@
         "ext-json": "*",
         "ext-openssl": "*",
         "ext-mbstring": "*",
-        "ext-pcntl": "*"
+        "ext-pcntl": "*",
+        "humbug/box": "^3.8"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^2.13",
         "squizlabs/php_codesniffer": "^3.3",
-        "humbug/box": "^2.7.5||^3.3",
         "eaglewu/swoole-ide-helper": "dev-master"
     },
     "conflict": {
